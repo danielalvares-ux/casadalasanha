@@ -117,7 +117,7 @@
 
         .text-center { text-align: center; }
 
-        .highlight-green { color: var(--color-green-light); }
+        .highlight-green { color: var(--color-green-light); font-weight: 700 !important; }
         .highlight-title-green { color: var(--color-green); }
 
         h1, h2, h3 {
@@ -160,6 +160,7 @@
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            text-align: center;
         }
 
         .btn-red {
@@ -189,7 +190,17 @@
         }
         .btn-outline:hover {
             background-color: var(--color-green);
+            color: var(--color-white) !important;
+        }
+        
+        .btn-outline-white {
+            background-color: transparent;
+            border: 2px solid var(--color-white);
             color: var(--color-white);
+        }
+        .btn-outline-white:hover {
+            background-color: var(--color-white);
+            color: var(--color-dark-bg);
         }
 
         /* Animações */
@@ -230,6 +241,7 @@
         .nav-links {
             display: flex;
             gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -315,6 +327,12 @@
             margin-bottom: 32px;
             color: var(--color-text-light);
             max-width: 600px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         .hero-checks {
@@ -483,7 +501,6 @@
             margin-bottom: -80px; 
             position: relative;
             z-index: 1;
-            /* Estilo específico solicitado */
             border: 11px solid var(--color-green);
             border-radius: 30px;
         }
@@ -684,6 +701,13 @@
             color: var(--color-text-muted);
             font-size: 1.15rem;
         }
+        
+        .final-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
         .obs {
             display: block;
@@ -766,6 +790,7 @@
             .hero-content { margin: 0 auto; text-align: center; }
             .hero-checks { align-items: center; justify-content: center; flex-direction: column; }
             .hero-title { font-size: 2.5rem; }
+            .hero-buttons { justify-content: center; }
             
             .section-title { font-size: 2.2rem; }
             .section-padding { padding: 60px 0; }
@@ -808,7 +833,6 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo fade-in">
-                <!-- Imagem do Logo solicitada -->
                 <img src="https://i.imgur.com/QMr9EKa.png" alt="Casa da Lasanha" class="logo-img">
             </a>
             <button class="hamburger" aria-label="Abrir menu" id="mobile-menu-btn">
@@ -819,6 +843,8 @@
                 <a href="#diferenciais">Diferenciais</a>
                 <a href="#depoimentos">Depoimentos</a>
                 <a href="#como-pedir">Como Pedir</a>
+                <!-- Link de Revenda adicionado no Menu -->
+                <a href="https://wa.me/5511963922064?text=Ola%2C%20gostaria%20de%20fazer%20meu%20pedido.%20" target="_blank" class="highlight-green">Área do Revendedor</a>
             </nav>
         </div>
     </header>
@@ -826,7 +852,6 @@
     <main>
         <!-- 1. Hero Section -->
         <section class="hero" id="home">
-            <!-- Imagem de fundo específica para o Hero -->
             <img src="https://i.imgur.com/KlhehGl.png" alt="Deliciosa lasanha artesanal recém saída do forno" class="hero-bg" fetchpriority="high">
             <div class="hero-overlay"></div>
             <div class="container">
@@ -839,9 +864,12 @@
                         Feita à mão, com ingredientes selecionados e a receita napolitana que a nossa família carrega há gerações. Sem conservantes. Sem industrial.
                     </p>
                     
-                    <button class="btn btn-red btn-whatsapp-generic" aria-label="Pedir agora pelo WhatsApp" style="display: inline-block; width: auto; max-width: 300px;">Pedir Agora</button>
+                    <!-- Botões Duplos Integrados: Delivery e Revenda -->
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5511963922064?text=Ola%2C%20gostaria%20de%20fazer%20um%20pedido%20" target="_blank" class="btn btn-red">Pedir Delivery</a>
+                        <a href="https://wa.me/5511963922064?text=Ola%2C%20gostaria%20de%20fazer%20meu%20pedido.%20" target="_blank" class="btn btn-outline-white">Para Revenda</a>
+                    </div>
                     
-                    <!-- Textos puxados em linha conforme imagem/solicitação -->
                     <div class="hero-checks">
                         <span>
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -974,7 +1002,6 @@
                     <p>Cada detalhe é pensado para que o sabor que chega até você seja o mais próximo possível de uma lasanha feita em casa.</p>
                 </div>
                 
-                <!-- Imagem específica solicitada com borda verde 11px e raio 30px -->
                 <div class="fade-in">
                     <img src="https://i.imgur.com/M5J9ZHF.png" alt="Chefe preparando porção artesanal de lasanha" class="why-us-image" loading="lazy" width="1200" height="480">
                 </div>
@@ -1102,16 +1129,20 @@
             <div class="container final-cta-content fade-in">
                 <h2 class="section-title">Do nosso forno para a sua mesa</h2>
                 <p>Uma lasanha artesanal, sem conservantes, prática para o dia a dia e especial o suficiente para transformar qualquer refeição em um momento de família.</p>
-                <button class="btn btn-green btn-whatsapp-generic" aria-label="Pedir minha lasanha agora pelo WhatsApp">Pedir minha lasanha agora</button>
+                
+                <!-- Botões Duplos Integrados (CTA Final) -->
+                <div class="final-cta-buttons">
+                    <a href="https://wa.me/5511963922064?text=Ola%2C%20gostaria%20de%20fazer%20um%20pedido%20" target="_blank" class="btn btn-green">Pedir Delivery Agora</a>
+                    <a href="https://wa.me/5511963922064?text=Ola%2C%20gostaria%20de%20fazer%20meu%20pedido.%20" target="_blank" class="btn btn-outline">Sou Revendedor</a>
+                </div>
+                
                 <span class="obs">Atendimento rápido e pedido realizado diretamente pelo WhatsApp.</span>
             </div>
         </section>
     </main>
 
-    <!-- Rodapé removido conforme solicitado -->
-
-    <!-- Floating WhatsApp Button -->
-    <a href="#" class="fab-whatsapp btn-whatsapp-generic" aria-label="Fale conosco no WhatsApp">
+    <!-- Floating WhatsApp Button (Direcionado para a base de Delivery/Geral) -->
+    <a href="https://wa.me/5511963922064?text=Ola%2C%20gostaria%20de%20fazer%20um%20pedido%20" target="_blank" class="fab-whatsapp" aria-label="Fale conosco no WhatsApp">
         <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
         </svg>
@@ -1119,35 +1150,21 @@
 
     <!-- Scripts -->
     <script>
-        // Configuração do WhatsApp e URL do cardápio
-        const WHATSAPP_NUMBER = "5511999999999";
-        const MENU_ONLINE_URL = "https://cardapio.casadawasanha.com.br"; // Substitua pelo link real
-        const DEFAULT_MSG = "Olá! Gostaria de fazer um pedido na Casa da Lasanha.";
-
-        // Função para formatar a URL do WhatsApp
-        function getWhatsAppUrl(message) {
-            return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-        }
+        // Número Integrado Corretamente para os produtos do Cardápio
+        const WHATSAPP_NUMBER = "5511963922064";
+        const MENU_ONLINE_URL = "https://cardapio.casadawasanha.com.br"; // Substitua pelo link real se possuir
 
         document.addEventListener('DOMContentLoaded', () => {
             
-            // Botões genéricos do WhatsApp (Hero, FAB, Final CTA)
-            const genericBtns = document.querySelectorAll('.btn-whatsapp-generic');
-            genericBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.open(getWhatsAppUrl(DEFAULT_MSG), '_blank');
-                });
-            });
-
-            // Botões específicos de produtos
+            // Botões específicos de produtos no Cardápio (Acrescentam o nome do sabor)
             const productBtns = document.querySelectorAll('.btn-whatsapp-product');
             productBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
                     const productName = btn.getAttribute('data-product');
-                    const productMsg = `Olá! Gostaria de pedir a ${productName}. Poderia me enviar as opções de tamanho e valores?`;
-                    window.open(getWhatsAppUrl(productMsg), '_blank');
+                    // Mescla o texto base de "Delivery" com o produto de interesse
+                    const productMsg = `Ola, gostaria de fazer um pedido. Tenho interesse na opção: ${productName}`;
+                    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(productMsg)}`, '_blank');
                 });
             });
 
