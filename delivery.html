@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casa da Lasanha - Lasanha artesanal pronta em 20 minutos, feita com receita de família e entregue na sua casa. 100% sem conservantes.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Casa da Lasanha | Tradição Napolitana">
+    <meta property="og:description" content="Lasanha artesanal pronta em 20 minutos, feita com receita de família e entregue na sua casa.">
+    <meta property="og:image" content="https://i.imgur.com/KlhehGl.png">
+    <meta property="og:type" content="website">
+    
+    <title>Casa da Lasanha | Tradição Napolitana de Família</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ====================================
+           Variáveis de Cor e Configurações
+           ==================================== */
+        :root {
+            --color-dark-bg: #100d0c;
+            --color-dark-brown: #1a1614;
+            --color-white: #FFFFFF;
+            
+            /* Tons de Verde */
+            --color-green: #2E7D32;
+            --color-green-hover: #1B5E20;
+            --color-green-light: #4CAF50;
+            
+            /* Tons de Vermelho/Vinho */
+            --color-red: #E53935; /* Botão Hero */
+            --color-red-hover: #C62828;
+            --color-wine: #8B1C1C; /* Cards Diferenciais */
+            
+            --color-beige: #E8D8C8;
+            --color-text-light: #E0E0E0;
+            --color-text-dark: #333333;
+            --color-text-muted: #666666;
+            
+            --font-main: 'Montserrat', sans-serif;
+            --font-title: 'Playfair Display', serif;
+            
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --transition: 0.3s ease;
+        }
+
+        /* ====================================
+           Reset & Base
+           ==================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Acessibilidade */
+        *:focus-visible {
+            outline: 2px dashed var(--color-green);
+            outline-offset: 4px;
+        }
+
+        /* Prefers Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ====================================
+           Utilitários e Tipografia
+           ==================================== */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-center { text-align: center; }
+
+        .highlight-green { color: var(--color-green-light); }
+        .highlight-title-green { color: var(--color-green); }
+
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            line-height: 1.2;
+        }
+
+        .small-title {
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-beige);
+            margin-bottom: 16px;
+            display: block;
+            font-weight: 600;
+        }
+        
+        .small-title.dark { color: var(--color-green); }
+
+        .section-title {
+            font-size: 2.75rem;
+            margin-bottom: 24px;
+        }
+
+        .section-padding { padding: 90px 0; }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-red {
+            background-color: var(--color-red);
+            color: var(--color-white);
+        }
+        .btn-red:hover {
+            background-color: var(--color-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+        }
+
+        .btn-green {
+            background-color: var(--color-green);
+            color: var(--color-white);
+        }
+        .btn-green:hover {
+            background-color: var(--color-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-green);
+            color: var(--color-green);
+        }
+        .btn-outline:hover {
+            background-color: var(--color-green);
+            color: var(--color-white);
+        }
+
+        /* Animações */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ====================================
+           Header & Nav
+           ==================================== */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition);
+        }
+        .nav-links a:hover { color: var(--color-green-light); }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .hamburger svg { width: 28px; height: 28px; fill: var(--color-white); }
+
+        /* ====================================
+           1. Hero Section
+           ==================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--color-dark-bg);
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 75%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(16, 13, 12, 1) 0%, rgba(16, 13, 12, 0.95) 45%, rgba(16, 13, 12, 0) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+            color: var(--color-white);
+            text-align: left;
+        }
+
+        .hero-pre-title {
+            display: inline-block;
+            background-color: rgba(46, 125, 50, 0.2);
+            color: var(--color-green-light);
+            border: 1px solid rgba(46, 125, 50, 0.5);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            margin-bottom: 32px;
+            color: var(--color-text-light);
+            max-width: 600px;
+        }
+
+        .hero-checks {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .hero-checks span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .hero-checks svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--color-green-light);
+        }
+
+        /* ====================================
+           2. Indicators Bar
+           ==================================== */
+        .indicators {
+            background-color: var(--color-green);
+            color: var(--color-white);
+            padding: 24px 0;
+        }
+
+        .indicators-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .indicator-item {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* ====================================
+           3. Menu Section
+           ==================================== */
+        .menu-section {
+            background-color: var(--color-white);
+        }
+        
+        .menu-section .section-title {
+            color: var(--color-text-dark);
+        }
+
+        .menu-desc {
+            max-width: 700px;
+            margin: 0 auto 48px;
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
+            transition: transform var(--transition), box-shadow var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .menu-card-img-wrapper {
+            position: relative;
+            height: 240px;
+            width: 100%;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .menu-card:nth-child(1) img { object-position: center; }
+        .menu-card:nth-child(2) img { object-position: top right; }
+        .menu-card:nth-child(3) img { object-position: bottom left; }
+        .menu-card:nth-child(4) img { object-position: 20% 80%; }
+        .menu-card:nth-child(5) img { object-position: left center; }
+        .menu-card:nth-child(6) img { object-position: 80% 20%; }
+
+        .badge-artesanal {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background-color: var(--color-green);
+            color: var(--color-white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .menu-card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-card-title {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--color-text-dark);
+        }
+
+        .menu-card-desc {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .menu-card .btn {
+            width: 100%;
+            font-size: 0.9rem;
+            padding: 14px;
+        }
+
+        /* ====================================
+           4. Why Us Section
+           ==================================== */
+        .why-us {
+            background-color: var(--color-dark-brown);
+            color: var(--color-white);
+        }
+
+        .why-us-header {
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+
+        .why-us-image {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            margin-bottom: -80px; 
+            position: relative;
+            z-index: 1;
+            /* Estilo específico solicitado */
+            border: 11px solid var(--color-green);
+            border-radius: 30px;
+        }
+
+        .why-us-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-card {
+            background-color: var(--color-wine);
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .why-card-icon { margin-bottom: 16px; }
+        .why-card-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--color-green-light);
+        }
+
+        .why-card-title {
+            font-family: var(--font-main);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--color-white);
+        }
+
+        .why-card-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* ====================================
+           5. Testimonials
+           ==================================== */
+        .testimonials {
+            background-color: var(--color-white);
+            padding-top: 160px; /* Compensar margem negativa da seção anterior */
+        }
+        
+        .testimonials .section-title { color: var(--color-text-dark); }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .test-card {
+            background: #fff;
+            border: 1px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .test-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        .stars svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-green);
+        }
+
+        .test-text {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--color-text-dark);
+            margin-bottom: 24px;
+        }
+
+        .test-author {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-text-dark);
+        }
+
+        .test-origin {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ====================================
+           6. How to Order
+           ==================================== */
+        .how-to {
+            position: relative;
+            background-color: var(--color-dark-bg);
+            color: var(--color-white);
+            overflow: hidden;
+        }
+
+        .how-to-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .how-to-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background-color: rgba(255,255,255,0.2);
+            z-index: 1;
+        }
+
+        .step-item {
+            flex: 1;
+            text-align: center;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background-color: var(--color-green);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            font-weight: 700;
+            font-family: var(--font-title);
+            margin: 0 auto 24px auto;
+            border: 6px solid var(--color-dark-bg);
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .step-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ====================================
+           7. Final CTA
+           ==================================== */
+        .final-cta {
+            background-color: var(--color-white);
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta .section-title {
+            color: var(--color-text-dark);
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            margin-bottom: 40px;
+            color: var(--color-text-muted);
+            font-size: 1.15rem;
+        }
+
+        .obs {
+            display: block;
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ====================================
+           Botão WhatsApp Flutuante
+           ==================================== */
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            animation: pulse 2s infinite;
+            transition: transform var(--transition);
+        }
+
+        .fab-whatsapp:hover { transform: scale(1.08); }
+        .fab-whatsapp svg { width: 34px; height: 34px; fill: #fff; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* ====================================
+           Media Queries (Responsividade)
+           ==================================== */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3.2rem; }
+            .menu-grid, .why-us-cards, .test-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-us-image { height: 400px; margin-bottom: 40px; }
+            .steps-container::before { display: none; }
+            .testimonials { padding-top: 100px; }
+        }
+
+        @media (max-width: 768px) {
+            /* Header */
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-dark-bg);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                gap: 24px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+            
+            /* Hero */
+            .hero {
+                align-items: flex-end;
+                padding-bottom: 60px;
+                text-align: left;
+            }
+            .hero-bg {
+                width: 100%;
+                object-position: center;
+            }
+            .hero-overlay {
+                background: linear-gradient(to top, rgba(16, 13, 12, 1) 0%, rgba(16, 13, 12, 0.85) 60%, rgba(16, 13, 12, 0.3) 100%);
+            }
+            .hero-content { margin: 0 auto; text-align: center; }
+            .hero-checks { align-items: center; justify-content: center; flex-direction: column; }
+            .hero-title { font-size: 2.5rem; }
+            
+            .section-title { font-size: 2.2rem; }
+            .section-padding { padding: 60px 0; }
+            
+            /* Indicadores */
+            .indicators-grid { grid-template-columns: repeat(2, 1fr); }
+            .indicator-item { min-width: auto; font-size: 0.95rem; }
+
+            /* Grids */
+            .menu-grid, .why-us-cards, .test-grid { grid-template-columns: 1fr; }
+            
+            .why-us-image {
+                border-width: 6px; 
+                border-radius: 20px;
+                height: 300px;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            /* Botões */
+            .btn { width: 100%; }
+            
+            /* FAB */
+            .fab-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+            .fab-whatsapp svg { width: 30px; height: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo fade-in">
+                <!-- Imagem do Logo solicitada -->
+                <img src="https://i.imgur.com/QMr9EKa.png" alt="Casa da Lasanha" class="logo-img">
+            </a>
+            <button class="hamburger" aria-label="Abrir menu" id="mobile-menu-btn">
+                <svg viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"/></svg>
+            </button>
+            <nav class="nav-links" id="nav-links">
+                <a href="#cardapio">Cardápio</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#como-pedir">Como Pedir</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero" id="home">
+            <!-- Imagem de fundo específica para o Hero -->
+            <img src="https://i.imgur.com/KlhehGl.png" alt="Deliciosa lasanha artesanal recém saída do forno" class="hero-bg" fetchpriority="high">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <span class="hero-pre-title">Tradição Napolitana de Família</span>
+                    <h1 class="hero-title">
+                        Lasanha artesanal <span class="highlight-title-green">pronta em 20 minutos</span>, feita com <span class="highlight-title-green">receita de família</span> e entregue na sua casa.
+                    </h1>
+                    <p class="hero-desc">
+                        Feita à mão, com ingredientes selecionados e a receita napolitana que a nossa família carrega há gerações. Sem conservantes. Sem industrial.
+                    </p>
+                    
+                    <button class="btn btn-red btn-whatsapp-generic" aria-label="Pedir agora pelo WhatsApp" style="display: inline-block; width: auto; max-width: 300px;">Pedir Agora</button>
+                    
+                    <!-- Textos puxados em linha conforme imagem/solicitação -->
+                    <div class="hero-checks">
+                        <span>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            100% artesanal
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Sem conservantes
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Pronta em 20 minutos
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Indicators Bar -->
+        <div class="indicators">
+            <div class="container indicators-grid fade-in">
+                <div class="indicator-item">5 anos de tradição artesanal</div>
+                <div class="indicator-item">4.9 no iFood</div>
+                <div class="indicator-item">100% sem conservantes</div>
+                <div class="indicator-item">3 sabores disponíveis</div>
+            </div>
+        </div>
+
+        <!-- 3. Menu Section -->
+        <section id="cardapio" class="section-padding menu-section">
+            <div class="container">
+                <div class="text-center fade-in">
+                    <span class="small-title dark">Nosso Cardápio</span>
+                    <h2 class="section-title">Escolha o seu favorito.</h2>
+                    <p class="menu-desc">Lasanhas artesanais congeladas, prontas em 20 minutos. Três sabores disponíveis em diferentes tamanhos: individual, para dois e família.</p>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Produto 1 -->
+                    <article class="menu-card fade-in">
+                        <div class="menu-card-img-wrapper">
+                            <span class="badge-artesanal">100% artesanal</span>
+                            <img src="https://i.imgur.com/tFcsP04.png" alt="Lasanha Bolonhesa com Presunto e Queijo" loading="lazy" width="400" height="240">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Lasanha Bolonhesa com Presunto e Queijo</h3>
+                            <p class="menu-card-desc">Carne moída com molho bolonhesa artesanal, presunto, queijo e massa feita à mão.</p>
+                            <button class="btn btn-outline btn-whatsapp-product" data-product="Lasanha Bolonhesa com Presunto e Queijo">Pedir este sabor</button>
+                        </div>
+                    </article>
+
+                    <!-- Produto 2 -->
+                    <article class="menu-card fade-in">
+                        <div class="menu-card-img-wrapper">
+                            <span class="badge-artesanal">100% artesanal</span>
+                            <img src="https://i.imgur.com/kIv1VB7.png" alt="Lasanha Bolonhesa com Queijo" loading="lazy" width="400" height="240">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Lasanha Bolonhesa com Queijo</h3>
+                            <p class="menu-card-desc">Molho bolonhesa encorpado, carne selecionada, queijo e massa artesanal.</p>
+                            <button class="btn btn-outline btn-whatsapp-product" data-product="Lasanha Bolonhesa com Queijo">Pedir este sabor</button>
+                        </div>
+                    </article>
+
+                    <!-- Produto 3 -->
+                    <article class="menu-card fade-in">
+                        <div class="menu-card-img-wrapper">
+                            <span class="badge-artesanal">100% artesanal</span>
+                            <img src="https://i.imgur.com/bdX5AiA.png" alt="Lasanha Quatro Queijos" loading="lazy" width="400" height="240">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Lasanha Quatro Queijos</h3>
+                            <p class="menu-card-desc">Blend artesanal de quatro queijos selecionados com molho branco cremoso.</p>
+                            <button class="btn btn-outline btn-whatsapp-product" data-product="Lasanha Quatro Queijos">Pedir este sabor</button>
+                        </div>
+                    </article>
+
+                    <!-- Produto 4 -->
+                    <article class="menu-card fade-in">
+                        <div class="menu-card-img-wrapper">
+                            <span class="badge-artesanal">100% artesanal</span>
+                            <img src="https://i.imgur.com/HhuHZ0F.png" alt="Lasanha de Presunto e Queijo" loading="lazy" width="400" height="240">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Lasanha de Presunto e Queijo</h3>
+                            <p class="menu-card-desc">Camadas de massa artesanal, presunto selecionado, queijo e molho preparado em nossa cozinha.</p>
+                            <button class="btn btn-outline btn-whatsapp-product" data-product="Lasanha de Presunto e Queijo">Pedir este sabor</button>
+                        </div>
+                    </article>
+
+                    <!-- Produto 5 -->
+                    <article class="menu-card fade-in">
+                        <div class="menu-card-img-wrapper">
+                            <span class="badge-artesanal">100% artesanal</span>
+                            <img src="https://i.imgur.com/myTAjov.png" alt="Lasanha Napolitana" loading="lazy" width="400" height="240">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Lasanha Napolitana</h3>
+                            <p class="menu-card-desc">Receita tradicional da família com molho de tomate encorpado, queijo e massa artesanal.</p>
+                            <button class="btn btn-outline btn-whatsapp-product" data-product="Lasanha Napolitana">Pedir este sabor</button>
+                        </div>
+                    </article>
+
+                    <!-- Produto 6 -->
+                    <article class="menu-card fade-in">
+                        <div class="menu-card-img-wrapper">
+                            <span class="badge-artesanal">100% artesanal</span>
+                            <img src="https://i.imgur.com/JWXJsQd.png" alt="Lasanha Calabresa Defumada" loading="lazy" width="400" height="240">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Lasanha Calabresa Defumada</h3>
+                            <p class="menu-card-desc">Calabresa defumada, molho artesanal, queijo e massa preparada à mão.</p>
+                            <button class="btn btn-outline btn-whatsapp-product" data-product="Lasanha Calabresa Defumada">Pedir este sabor</button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center fade-in">
+                    <button class="btn btn-green" id="btn-cardapio-online">Pedir agora direto no cardápio online</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Why Us Section -->
+        <section id="diferenciais" class="section-padding why-us">
+            <div class="container">
+                <div class="why-us-header fade-in">
+                    <span class="small-title">Por que a Casa da Lasanha</span>
+                    <h2 class="section-title">Não é um congelado comum.</h2>
+                    <p>Cada detalhe é pensado para que o sabor que chega até você seja o mais próximo possível de uma lasanha feita em casa.</p>
+                </div>
+                
+                <!-- Imagem específica solicitada com borda verde 11px e raio 30px -->
+                <div class="fade-in">
+                    <img src="https://i.imgur.com/M5J9ZHF.png" alt="Chefe preparando porção artesanal de lasanha" class="why-us-image" loading="lazy" width="1200" height="480">
+                </div>
+
+                <div class="why-us-cards">
+                    <div class="why-card fade-in">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3 class="why-card-title">100% Artesanal</h3>
+                        <p class="why-card-desc">Feita à mão em nossa cozinha, em lotes controlados. Sem fábricas e sem linha de produção industrial.</p>
+                    </div>
+
+                    <div class="why-card fade-in">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3 class="why-card-title">Sem Conservantes</h3>
+                        <p class="why-card-desc">Ingredientes selecionados e frescos. Nada que você não reconheceria em uma cozinha caseira.</p>
+                    </div>
+
+                    <div class="why-card fade-in">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3 class="why-card-title">Ultracongelada</h3>
+                        <p class="why-card-desc">Processo profissional de ultracongelamento que preserva o sabor original e aumenta a durabilidade do produto.</p>
+                    </div>
+
+                    <div class="why-card fade-in">
+                        <div class="why-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3 class="why-card-title">Pronta em 20 minutos</h3>
+                        <p class="why-card-desc">Do forno ou micro-ondas diretamente para a sua mesa. Uma refeição especial sem complicação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Testimonials Section -->
+        <section id="depoimentos" class="section-padding testimonials">
+            <div class="container">
+                <div class="text-center fade-in">
+                    <span class="small-title dark">O que nossos clientes dizem</span>
+                    <h2 class="section-title">Quem prova, volta.</h2>
+                </div>
+
+                <div class="test-grid">
+                    <article class="test-card fade-in">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="test-text">“Melhor lasanha que já pedi por delivery. Parece comida de vovó de verdade. Sem conservante e ainda chega perfeita.”</p>
+                        <p class="test-author">Mariana C.</p>
+                        <p class="test-origin">Via iFood — São Paulo</p>
+                    </article>
+
+                    <article class="test-card fade-in">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="test-text">“Compro toda semana. A Napolitana é incrível. Meus filhos amam. Qualidade muito acima do que esperava de um congelado.”</p>
+                        <p class="test-author">Roberto A.</p>
+                        <p class="test-origin">Via iFood — São Paulo</p>
+                    </article>
+
+                    <article class="test-card fade-in">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="test-text">“Comprei a de 1,2 kg para o domingo em família. Foi um sucesso! Prática, saborosa e de qualidade real. Já pedi novamente.”</p>
+                        <p class="test-author">Fernanda L.</p>
+                        <p class="test-origin">Via iFood — São Paulo</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. How to Order Section -->
+        <section id="como-pedir" class="section-padding how-to">
+            <img src="https://i.imgur.com/YOTbHGe.png" alt="Mesa arrumada para o jantar" class="how-to-bg" loading="lazy">
+            <div class="container how-to-content">
+                <div class="text-center fade-in">
+                    <span class="small-title">Simples de começar</span>
+                    <h2 class="section-title">Como fazer o pedido da sua lasanha</h2>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-item fade-in">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Escolha sua lasanha favorita</h3>
+                        <p class="step-desc">Napolitana, Quatro Queijos ou Bolonhesa. Todas feitas à mão, com receita de família, ingredientes selecionados e aquele sabor de comida feita em casa.</p>
+                    </div>
+
+                    <div class="step-item fade-in">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Defina o tamanho ideal</h3>
+                        <p class="step-desc">Escolha a opção perfeita para o seu momento: individual, para dividir a dois ou para reunir a família em volta da mesa.</p>
+                    </div>
+
+                    <div class="step-item fade-in">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Peça pelo WhatsApp e receba em casa</h3>
+                        <p class="step-desc">Clique no botão, fale com nossa equipe e finalize seu pedido de forma simples. Sua lasanha chega pronta para aquecer e servir em poucos minutos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Final CTA Section -->
+        <section class="section-padding final-cta">
+            <div class="container final-cta-content fade-in">
+                <h2 class="section-title">Do nosso forno para a sua mesa</h2>
+                <p>Uma lasanha artesanal, sem conservantes, prática para o dia a dia e especial o suficiente para transformar qualquer refeição em um momento de família.</p>
+                <button class="btn btn-green btn-whatsapp-generic" aria-label="Pedir minha lasanha agora pelo WhatsApp">Pedir minha lasanha agora</button>
+                <span class="obs">Atendimento rápido e pedido realizado diretamente pelo WhatsApp.</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé removido conforme solicitado -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" class="fab-whatsapp btn-whatsapp-generic" aria-label="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Configuração do WhatsApp e URL do cardápio
+        const WHATSAPP_NUMBER = "5511999999999";
+        const MENU_ONLINE_URL = "https://cardapio.casadawasanha.com.br"; // Substitua pelo link real
+        const DEFAULT_MSG = "Olá! Gostaria de fazer um pedido na Casa da Lasanha.";
+
+        // Função para formatar a URL do WhatsApp
+        function getWhatsAppUrl(message) {
+            return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Botões genéricos do WhatsApp (Hero, FAB, Final CTA)
+            const genericBtns = document.querySelectorAll('.btn-whatsapp-generic');
+            genericBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open(getWhatsAppUrl(DEFAULT_MSG), '_blank');
+                });
+            });
+
+            // Botões específicos de produtos
+            const productBtns = document.querySelectorAll('.btn-whatsapp-product');
+            productBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const productName = btn.getAttribute('data-product');
+                    const productMsg = `Olá! Gostaria de pedir a ${productName}. Poderia me enviar as opções de tamanho e valores?`;
+                    window.open(getWhatsAppUrl(productMsg), '_blank');
+                });
+            });
+
+            // Botão do Cardápio Online
+            const onlineMenuBtn = document.getElementById('btn-cardapio-online');
+            if (onlineMenuBtn) {
+                onlineMenuBtn.addEventListener('click', () => {
+                    window.open(MENU_ONLINE_URL, '_blank');
+                });
+            }
+
+            // Menu Mobile (Hambúrguer)
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (mobileBtn && navLinks) {
+                mobileBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+
+                // Fechar o menu ao clicar em algum link
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+
+            // Animação de Fade-in com Intersection Observer
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Respeito à configuração prefers-reduced-motion
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.15
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                fadeElements.forEach(el => observer.observe(el));
+            } else {
+                // Se motion reduzida ou sem suporte, exibir elementos instantaneamente
+                fadeElements.forEach(el => el.classList.add('visible'));
+            }
+        });
+    </script>
+</body>
+</html>
